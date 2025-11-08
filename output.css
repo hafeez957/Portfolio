@@ -169,8 +169,20 @@
   }
 }
 @layer utilities {
+  .fixed {
+    position: fixed;
+  }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
+  .z-2 {
+    z-index: 2;
+  }
   .flex {
     display: flex;
+  }
+  .hidden {
+    display: none;
   }
   .table {
     display: table;
@@ -181,11 +193,8 @@
   .resize {
     resize: both;
   }
-  .justify-evenly {
-    justify-content: space-evenly;
-  }
-  .gap-16 {
-    gap: calc(var(--spacing) * 16);
+  .justify-between {
+    justify-content: space-between;
   }
   .border {
     border-style: var(--tw-border-style);
@@ -224,6 +233,16 @@
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .sm\:gap-16 {
+    @media (width >= 40rem) {
+      gap: calc(var(--spacing) * 16);
+    }
+  }
+  .md\:hidden {
+    @media (width >= 48rem) {
+      display: none;
+    }
   }
 }
 .nav-element {

@@ -5,14 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hafeez</title>
     <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <nav id="nav-bar" class="flex justify-evenly bg-gray-800 text-white p-4 border-b-2 border-gray-900">
+    <nav id="navbar" class="flex justify-between bg-gray-800 text-white p-4 border-b-2 border-gray-900">
         <div id="logo">
-            <h1 class="text-lg font-bold">HAFEEZ</h1>
+            <h1 class="text-lg font-bold">HAFEEZ ULLA</h1>
         </div>
-        <div id="nav-links" class="">
-            <ul class="flex gap-16 font-nav">
+        <div id="nav" onclick="hide()" class="md:hidden">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div id="nav-bar" class=" hidden fixed inset-0 bg-red z-2">
+            <div id="logo">
+            <h1 class="text-lg font-bold">HAFEEZ ULLA</h1>
+        </div>
+        </div>
+        <div id="nav-links" class="hidden">
+            <ul class="flex font-nav sm:gap-16">
                 <li class="nav-element"><a href="#">Home</a></li>
                 <li class="nav-element"><a href="#">Qualification</a></li>
                 <li class="nav-element"><a href="#">Skills</a></li>
@@ -23,4 +32,5 @@
         </div>
     </nav>
 </body>
+<script src="./script.js"></script>
 </html>
