@@ -1,36 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hafeez</title>
     <link rel="stylesheet" href="./output.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <nav id="navbar" class="flex justify-between bg-gray-800 text-white p-4 border-b-2 border-gray-900">
+    <nav id="navbar" class="flex justify-between bg-gray-800 text-white p-4">
         <div id="logo">
             <h1 class="text-lg font-bold">HAFEEZ ULLA</h1>
         </div>
+        <div id="nav-links" class="hidden md:flex md:pr-15">
+                <ul class="flex font-nav sm:gap-16">
+                    <li class="nav-element"><a href="#">Home</a></li>
+                    <li class="nav-element"><a href="#">Qualification</a></li>
+                    <li class="nav-element"><a href="#">Skills</a></li>
+                    <li class="nav-element"><a href="#">Projects</a></li>
+                    <li class="nav-element"><a href="#">About me</a></li>
+                    <li class="nav-element"><a href="#">Contact me</a></li>
+                </ul>
+            </div>
         <div id="nav" onclick="hide()" class="md:hidden">
             <i class="fa-solid fa-bars"></i>
         </div>
-        <div id="nav-bar" class=" hidden fixed inset-0 bg-red z-2">
-            <div id="logo">
-            <h1 class="text-lg font-bold">HAFEEZ ULLA</h1>
-        </div>
-        </div>
-        <div id="nav-links" class="hidden">
-            <ul class="flex font-nav sm:gap-16">
-                <li class="nav-element"><a href="#">Home</a></li>
-                <li class="nav-element"><a href="#">Qualification</a></li>
-                <li class="nav-element"><a href="#">Skills</a></li>
-                <li class="nav-element"><a href="#">Projects</a></li>
-                <li class="nav-element"><a href="#">About me</a></li>
-                <li class="nav-element"><a href="#">Contact me</a></li>
-            </ul>
+        <div id="nav-bar" class="fixed inset-0 hidden z-2">
+           <div class="bg-gray-800 flex justify-between p-4">
+             <div id="logo">
+                <h1 class="text-lg font-bold">HAFEEZ ULLA</h1>
+            </div>
+            <div id="nav" onclick="hide()" class="md:hidden">
+                <i class="fa-solid fa-x"></i>
+            </div>
+           </div>
+            <div id="nav-links" class=" bg-white text-black">
+                <ul class="flex flex-col font-nav gap-4 p-4">
+                    <li class="nav-responsive"><a href="#">Home</a></li>
+                    <li class="nav-responsive"><a href="#">Qualification</a></li>
+                    <li class="nav-responsive"><a href="#">Skills</a></li>
+                    <li class="nav-responsive"><a href="#">Projects</a></li>
+                    <li class="nav-responsive"><a href="#">About me</a></li>
+                    <li class="nav-responsive"><a href="#">Contact me</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 </body>
 <script src="./script.js"></script>
+
 </html>

@@ -1,10 +1,13 @@
 @import "tailwindcss";
 
-.nav-element{
-    @apply hover:text-blue-400 active:underline;
-}
 
 @theme {
   --font-nav: "Inter", sans-serif;
   --font-heading: "Poppins", sans-serif;
+}
+.nav-element{
+    @apply hover:text-blue-400 active:underline;
+}
+.nav-responsive{
+    @apply hover:text-black p-1 active:underline hover:bg-gray-200 rounded;
 }

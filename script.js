@@ -1,9 +1,8 @@
-const menu=document.getElementById('nav');
+const menu=document.getElementById('nav-bar');
 
  function hide(){
 
     menu.classList.toggle('hidden');
-    console.log("hi");
     
  }
     
