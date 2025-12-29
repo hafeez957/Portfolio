@@ -50,17 +50,21 @@
             </div>
         </div>
     </nav>
-    <div id="hero-section" class="w-[100%] h-[100%] ">
+    <div id="hero-section" class="relative w-full h-screen overflow-hidden">
         <!-- Background Video -->
-        <video autoplay loop muted playsinline class=" ">
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
             <source src="./Assets/videos/video.mp4" type="video/mp4" />
         </video>
-        <div id="hero-info" class="absolute top-44 text-white p-4 flex flex-col gap-3.5">
-            <h1 class="text-4xl font-bold">Java Full-Stack Developer</h1>
-            <p class="text-xl ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, enim dolores quidem aliquam laboriosam ab itaque cumque perferendis nesciunt quos soluta animi necessitatibus ex nemo porro laborum modi, mollitia dicta.</p>
-            <div class=" flex gap-10 text-white">
-                <button class="bg-gray-700 p-2 px-4 rounded-lg">Resume</button>
-            <button class="bg-gray-700 p-2 px-4 rounded-lg">Hire me</button>
+        <!-- Overlay for better text readability -->
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div id="hero-info" class="relative z-10 flex items-center justify-center text-white p-4 h-full">
+            <div class="text-center max-w-4xl mx-auto animate-fade-in-up">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 font-heading">Java Full-Stack Developer</h1>
+                <p class="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 leading-relaxed max-w-2xl mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, enim dolores quidem aliquam laboriosam ab itaque cumque perferendis nesciunt quos soluta animi necessitatibus ex nemo porro laborum modi, mollitia dicta.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-gray-700 hover:bg-gray-600 hover:scale-105 transition-all duration-300 p-3 px-6 rounded-lg text-base sm:text-lg font-semibold shadow-lg">Resume</button>
+                    <button class="bg-blue-600 hover:bg-blue-500 hover:scale-105 transition-all duration-300 p-3 px-6 rounded-lg text-base sm:text-lg font-semibold shadow-lg">Hire me</button>
+                </div>
             </div>
         </div>
     </div>

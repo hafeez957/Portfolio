@@ -5,6 +5,22 @@
   --font-nav: "Inter", sans-serif;
   --font-heading: "Poppins", sans-serif;
 }
+
+.animate-fade-in-up {
+  animation: fadeInUp 1.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .nav-element{
     @apply hover:text-blue-400 active:underline;
 }
