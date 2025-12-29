@@ -16,29 +16,29 @@
         <div id="logo">
             <h1 class="text-lg font-bold">HAFEEZ ULLA</h1>
         </div>
-        <div id="nav-links" class="hidden md:flex md:pr-15">
-                <ul class="flex font-nav sm:gap-16">
-                    <li class="nav-element"><a href="#">Home</a></li>
-                    <li class="nav-element"><a href="#">Qualification</a></li>
-                    <li class="nav-element"><a href="#">Skills</a></li>
-                    <li class="nav-element"><a href="#">Projects</a></li>
-                    <li class="nav-element"><a href="#">About me</a></li>
-                    <li class="nav-element"><a href="#">Contact me</a></li>
-                </ul>
-            </div>
+        <div id="nav-links" class="hidden md:flex  lg:pr-15">
+            <ul class="flex font-nav sm:gap-7 lg:gap-16">
+                <li class="nav-element"><a href="#">Home</a></li>
+                <li class="nav-element"><a href="#">Qualification</a></li>
+                <li class="nav-element"><a href="#">Skills</a></li>
+                <li class="nav-element"><a href="#">Projects</a></li>
+                <li class="nav-element"><a href="#">About me</a></li>
+                <li class="nav-element"><a href="#">Contact me</a></li>
+            </ul>
+        </div>
         <div id="nav" onclick="hide()" class="md:hidden">
             <i class="fa-solid fa-bars"></i>
         </div>
-        <div id="nav-bar" class="fixed inset-0 hidden z-2">
-           <div class="bg-gray-800 flex justify-between p-4">
-             <div id="logo">
-                <h1 class="text-lg font-bold">HAFEEZ ULLA</h1>
+        <div id="nav-bar" class="fixed inset-0 hidden z-2 bg-gray-600">
+            <div class="bg-gray-800 flex justify-between p-4">
+                <div id="logo">
+                    <h1 class="text-lg font-bold">HAFEEZ ULLA</h1>
+                </div>
+                <div id="nav" onclick="hide()" class="md:hidden">
+                    <i class="fa-solid fa-x"></i>
+                </div>
             </div>
-            <div id="nav" onclick="hide()" class="md:hidden">
-                <i class="fa-solid fa-x"></i>
-            </div>
-           </div>
-            <div id="nav-links" class=" bg-white text-black">
+            <div id="nav-links" class=" bg-gray-600 text-white ">
                 <ul class="flex flex-col font-nav gap-4 p-4">
                     <li class="nav-responsive"><a href="#">Home</a></li>
                     <li class="nav-responsive"><a href="#">Qualification</a></li>
@@ -50,6 +50,20 @@
             </div>
         </div>
     </nav>
+    <div id="hero-section" class="w-[100%] h-[100%] ">
+        <!-- Background Video -->
+        <video autoplay loop muted playsinline class=" ">
+            <source src="./Assets/videos/video.mp4" type="video/mp4" />
+        </video>
+        <div id="hero-info" class="absolute top-44 text-white p-4 flex flex-col gap-3.5">
+            <h1 class="text-4xl font-bold">Java Full-Stack Developer</h1>
+            <p class="text-xl ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, enim dolores quidem aliquam laboriosam ab itaque cumque perferendis nesciunt quos soluta animi necessitatibus ex nemo porro laborum modi, mollitia dicta.</p>
+            <div class=" flex gap-10 text-white">
+                <button class="bg-gray-700 p-2 px-4 rounded-lg">Resume</button>
+            <button class="bg-gray-700 p-2 px-4 rounded-lg">Hire me</button>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="./script.js"></script>
 

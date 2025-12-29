@@ -11,3 +11,11 @@
 .nav-responsive{
     @apply hover:text-black p-1 active:underline hover:bg-gray-200 rounded;
 }
+
+.input{
+  @apply border-2 border-gray-400 rounded-lg p-1;
+}
+
+.form{
+  @apply flex flex-col ml-160 mt-5 gap-2 w-60;
+}
