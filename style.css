@@ -35,3 +35,7 @@
 .form{
   @apply flex flex-col ml-160 mt-5 gap-2 w-60;
 }
+
+body.menu-open {
+  overflow: hidden;
+}

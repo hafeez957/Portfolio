@@ -29,7 +29,7 @@
         <div id="nav" onclick="hide()" class="md:hidden">
             <i class="fa-solid fa-bars"></i>
         </div>
-        <div id="nav-bar" class="fixed inset-0 hidden z-2 bg-gray-600">
+        <div id="nav-bar" class="fixed inset-0 hidden z-10 bg-black">
             <div class="bg-gray-800 flex justify-between p-4">
                 <div id="logo">
                     <h1 class="text-lg font-bold">HAFEEZ ULLA</h1>
@@ -38,7 +38,7 @@
                     <i class="fa-solid fa-x"></i>
                 </div>
             </div>
-            <div id="nav-links" class=" bg-gray-600 text-white ">
+            <div id="nav-links" class=" bg-black text-white ">
                 <ul class="flex flex-col font-nav gap-4 p-4">
                     <li class="nav-responsive"><a href="#">Home</a></li>
                     <li class="nav-responsive"><a href="#">Qualification</a></li>
@@ -52,12 +52,13 @@
     </nav>
     <div id="hero-section" class="relative w-full h-screen overflow-hidden">
         <!-- Background Video -->
-        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
-            <source src="./Assets/videos/video.mp4" type="video/mp4" />
+        <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover" style="display: block;">
+            <source src="./Assets/videos/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
         </video>
         <!-- Overlay for better text readability -->
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-        <div id="hero-info" class="relative z-10 flex items-center justify-center text-white p-4 h-full">
+        <div id="hero-info" class="relative flex items-center justify-center text-white p-4 h-full">
             <div class="text-center max-w-4xl mx-auto animate-fade-in-up">
                 <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 font-heading">Java Full-Stack Developer</h1>
                 <p class="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 leading-relaxed max-w-2xl mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, enim dolores quidem aliquam laboriosam ab itaque cumque perferendis nesciunt quos soluta animi necessitatibus ex nemo porro laborum modi, mollitia dicta.</p>
@@ -68,6 +69,283 @@
             </div>
         </div>
     </div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="w-full py-20 px-4 bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 font-heading">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-700"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 font-heading">WorkerGo</h3>
+                        <p class="text-gray-300 mb-4">Brief description of your project and the technologies used.</p>
+                        <div class="flex gap-2 mb-4">
+                            <span class="bg-blue-600 px-3 py-1 rounded-full text-sm">Java</span>
+                            <span class="bg-blue-600 px-3 py-1 rounded-full text-sm">Springboot</span>
+                        </div>
+                        <button class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-lg transition-colors duration-300">View Project</button>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-green-700"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 font-heading">Event Ticket Booking System</h3>
+                        <p class="text-gray-300 mb-4">Brief description of your project and the technologies used.</p>
+                        <div class="flex gap-2 mb-4">
+                            <span class="bg-green-600 px-3 py-1 rounded-full text-sm">Java</span>
+                            <span class="bg-green-600 px-3 py-1 rounded-full text-sm">JSP</span>
+                        </div>
+                        <button class="bg-green-600 hover:bg-green-500 px-4 py-2 rounded-lg transition-colors duration-300">View Project</button>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-700"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 font-heading">SlayIt</h3>
+                        <p class="text-gray-300 mb-4">Brief description of your project and the technologies used.</p>
+                        <div class="flex gap-2 mb-4">
+                            <span class="bg-purple-600 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                            <span class="bg-purple-600 px-3 py-1 rounded-full text-sm">Bootstrap</span>
+                        </div>
+                        <button class="bg-purple-600 hover:bg-purple-500 px-4 py-2 rounded-lg transition-colors duration-300">View Project</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="w-full py-20 px-4 bg-gray-800 text-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 font-heading">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Backend Skills -->
+                <div class="bg-gray-900 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 font-heading text-blue-400">Backend</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-blue-600 px-4 py-2 rounded-lg">Java</span>
+                        <span class="bg-blue-600 px-4 py-2 rounded-lg">Spring Boot</span>
+                        <span class="bg-blue-600 px-4 py-2 rounded-lg">MySQL</span>
+                        <span class="bg-blue-600 px-4 py-2 rounded-lg">REST APIs</span>
+                        <span class="bg-blue-600 px-4 py-2 rounded-lg">Hibernate</span>
+                        <span class="bg-blue-600 px-4 py-2 rounded-lg">SQL</span>
+                    </div>
+                </div>
+
+                <!-- Frontend Skills -->
+                <div class="bg-gray-900 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 font-heading text-green-400">Frontend</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-green-600 px-4 py-2 rounded-lg">HTML</span>
+                        <span class="bg-green-600 px-4 py-2 rounded-lg">CSS</span>
+                        <span class="bg-green-600 px-4 py-2 rounded-lg">JavaScript</span>
+                        <span class="bg-green-600 px-4 py-2 rounded-lg">React</span>
+                        <span class="bg-green-600 px-4 py-2 rounded-lg">Tailwind CSS</span>
+                        <span class="bg-green-600 px-4 py-2 rounded-lg">Bootstrap</span>
+                    </div>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="bg-gray-900 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 font-heading text-purple-400">Tools & Technologies</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-purple-600 px-4 py-2 rounded-lg">Git</span>
+                        <span class="bg-purple-600 px-4 py-2 rounded-lg">Maven</span>
+                        <!-- <span class="bg-purple-600 px-4 py-2 rounded-lg">Docker</span>
+                        <span class="bg-purple-600 px-4 py-2 rounded-lg">Jenkins</span> -->
+                        <span class="bg-purple-600 px-4 py-2 rounded-lg">VS Code</span>
+                        <span class="bg-purple-600 px-4 py-2 rounded-lg">Postman</span>
+                    </div>
+                </div>
+
+                <!-- Other Skills -->
+                <div class="bg-gray-900 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 font-heading text-red-400">Other Skills</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-red-600 px-4 py-2 rounded-lg">Problem Solving</span>
+                        <span class="bg-red-600 px-4 py-2 rounded-lg">Team Collaboration</span>
+                        <span class="bg-red-600 px-4 py-2 rounded-lg">Communication</span>
+                        <span class="bg-red-600 px-4 py-2 rounded-lg">Agile</span>
+                        <span class="bg-red-600 px-4 py-2 rounded-lg">Leadership</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="w-full py-20 px-4 bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 font-heading">Education</h2>
+            <div class="space-y-8">
+                <!-- Education Card 1 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-lg border-l-4 border-blue-500">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold font-heading">Bachelor of Computer Applications</h3>
+                            <p class="text-blue-400 text-lg mt-2">Kuvempu University</p>
+                        </div>
+                        <span class="bg-blue-600 px-4 py-2 rounded-lg text-sm font-semibold">2022- 2025</span>
+                    </div>
+                    <p class="text-gray-300">CGPA: 7.68/10.0</p>
+                    <!-- <p class="text-gray-400 mt-2">Relevant coursework: Data Structures, Algorithms, Database Management, Web Development, Software Engineering</p> -->
+                </div>
+
+                <!-- Education Card 2 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-lg border-l-4 border-green-500">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold font-heading">Science (12th Grade)</h3>
+                            <p class="text-green-400 text-lg mt-2">Govt Pre-University College Ayanur</p>
+                        </div>
+                        <span class="bg-green-600 px-4 py-2 rounded-lg text-sm font-semibold">2020 - 2022</span>
+                    </div>
+                    <p class="text-gray-300">Percentage: 76%</p>
+                    <p class="text-gray-400 mt-2">Specialized in Mathematics, Physics, Biology and Chemistry</p>
+                </div>
+                <!-- Education Card 3 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-lg border-l-4 border-green-500">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold font-heading">SSLC (10th Grade)</h3>
+                            <p class="text-green-400 text-lg mt-2">Govt High School Mandaghatta</p>
+                        </div>
+                        <span class="bg-green-600 px-4 py-2 rounded-lg text-sm font-semibold">2020</span>
+                    </div>
+                    <p class="text-gray-300">Percentage: 76%</p>
+                    <p class="text-gray-400 mt-2"></p>
+                </div>
+
+                <!-- Education Card 4 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-lg border-l-4 border-purple-500">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold font-heading">Certification - Java Full-Stack Developer</h3>
+                            <p class="text-purple-400 text-lg mt-2">Jspiders Bangalore</p>
+                        </div>
+                        <span class="bg-purple-600 px-4 py-2 rounded-lg text-sm font-semibold">2023</span>
+                    </div>
+                    <p class="text-gray-300">Credential ID: XXXXX</p>
+                    <p class="text-gray-400 mt-2">Completed comprehensive full-stack development training covering Java, Spring Boot, React, and database management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="w-full py-20 px-4 bg-gray-800 text-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 font-heading">Get In Touch</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="flex items-start gap-4">
+                        <i class="fa-solid fa-envelope text-blue-400 text-2xl mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Email</h3>
+                            <p class="text-gray-300">your.email@example.com</p>
+                        </div>
+                    </div>
+                    <!-- <div class="flex items-start gap-4">
+                        <i class="fa-solid fa-phone text-green-400 text-2xl mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Phone</h3>
+                            <p class="text-gray-300">+1 (555) 123-4567</p>
+                        </div>
+                    </div> -->
+                    <div class="flex items-start gap-4">
+                        <i class="fa-solid fa-location-dot text-red-400 text-2xl mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Current Location</h3>
+                            <p class="text-gray-300">Bangalore, Karnataka</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 mt-8">
+                        <a href="#" class="text-blue-400 hover:text-blue-300 text-2xl transition-colors">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300 text-2xl transition-colors">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <!-- <a href="#" class="text-blue-400 hover:text-blue-300 text-2xl transition-colors">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a> -->
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form class="space-y-6 bg-gray-900 p-8 rounded-lg">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Name</label>
+                        <input type="text" placeholder="Your Name" class="w-full border-2 border-gray-600 bg-gray-800 text-white rounded-lg p-3 focus:border-blue-500 focus:outline-none transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Email</label>
+                        <input type="email" placeholder="your.email@example.com" class="w-full border-2 border-gray-600 bg-gray-800 text-white rounded-lg p-3 focus:border-blue-500 focus:outline-none transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Message</label>
+                        <textarea placeholder="Your message here..." rows="5" class="w-full border-2 border-gray-600 bg-gray-800 text-white rounded-lg p-3 focus:border-blue-500 focus:outline-none transition-colors resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 py-3 px-6 rounded-lg text-lg font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="w-full py-8 px-4 bg-gray-950 text-gray-300 border-t border-gray-700">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Brand -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-2 font-heading">HAFEEZ ULLA</h3>
+                    <p class="text-gray-400">Java Full-Stack Developer passionate about building amazing web applications.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Projects</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Skills</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Follow Me</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 text-xl transition-colors">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300 text-xl transition-colors">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <!-- <a href="#" class="text-gray-400 hover:text-blue-400 text-xl transition-colors">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-red-400 text-xl transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 pt-6 text-center text-gray-500">
+                <p>&copy; 2026 Hafeez Ulla. All rights reserved. | Designed with <span class="text-red-500">❤</span> by Hafeez Ulla</p>
+            </div>
+        </div>
+    </footer>
 </body>
 <script src="./script.js"></script>
 
