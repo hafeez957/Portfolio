@@ -12,18 +12,18 @@
 </head>
 
 <body>
-    <nav id="navbar" class="flex justify-between bg-gray-800 text-white p-4">
+    <nav id="navbar" class="flex justify-between bg-gray-800 text-white p-4 sm:fixed top-0 w-full z-20">
         <div id="logo">
             <h1 class="text-lg font-bold">HAFEEZ ULLA</h1>
         </div>
         <div id="nav-links" class="hidden md:flex  lg:pr-15">
             <ul class="flex font-nav sm:gap-7 lg:gap-16">
-                <li class="nav-element"><a href="#">Home</a></li>
-                <li class="nav-element"><a href="#">Qualification</a></li>
-                <li class="nav-element"><a href="#">Skills</a></li>
-                <li class="nav-element"><a href="#">Projects</a></li>
+                <li class="nav-element"><a href="./index.html">Home</a></li>
+                <li class="nav-element"><a href="#education">Qualification</a></li>
+                <li class="nav-element"><a href="#skills">Skills</a></li>
+                <li class="nav-element"><a href="#projects">Projects</a></li>
                 <li class="nav-element"><a href="#">About me</a></li>
-                <li class="nav-element"><a href="#">Contact me</a></li>
+                <li class="nav-element"><a href="#contact">Contact me</a></li>
             </ul>
         </div>
         <div id="nav" onclick="hide()" class="md:hidden">
@@ -40,31 +40,30 @@
             </div>
             <div id="nav-links" class=" bg-black text-white ">
                 <ul class="flex flex-col font-nav gap-4 p-4">
-                    <li class="nav-responsive"><a href="#">Home</a></li>
-                    <li class="nav-responsive"><a href="#">Qualification</a></li>
-                    <li class="nav-responsive"><a href="#">Skills</a></li>
-                    <li class="nav-responsive"><a href="#">Projects</a></li>
-                    <li class="nav-responsive"><a href="#">About me</a></li>
-                    <li class="nav-responsive"><a href="#">Contact me</a></li>
+                    <li class="nav-element"><a href="./index.html">Home</a></li>
+                <li class="nav-element"><a href="#education">Qualification</a></li>
+                <li class="nav-element"><a href="#skills">Skills</a></li>
+                <li class="nav-element"><a href="#projects">Projects</a></li>
+                <li class="nav-element"><a href="#">About me</a></li>
+                <li class="nav-element"><a href="#contact">Contact me</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div id="hero-section" class="relative w-full h-screen overflow-hidden">
+    <div id="hero-section" class="relative w-full h-screen overflow-hidden bg-gray-900">
         <!-- Background Video -->
-        <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover" style="display: block;">
+        <video id="bgVideo" class="absolute inset-0 w-full h-full object-cover" autoplay muted loop>
             <source src="./Assets/videos/video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
         </video>
         <!-- Overlay for better text readability -->
-        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="absolute inset-0   bg-opacity-40"></div>
         <div id="hero-info" class="relative flex items-center justify-center text-white p-4 h-full">
-            <div class="text-center max-w-4xl mx-auto animate-fade-in-up">
+            <div class="text-center max-w-4xl mx-auto">
                 <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 font-heading">Java Full-Stack Developer</h1>
-                <p class="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 leading-relaxed max-w-2xl mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, enim dolores quidem aliquam laboriosam ab itaque cumque perferendis nesciunt quos soluta animi necessitatibus ex nemo porro laborum modi, mollitia dicta.</p>
+                <p class="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 leading-relaxed max-w-2xl mx-auto">Actively seeking an entry-level software developer role where I can apply my skills in Java, web development, and backend technologies while continuously learning and contributing to real-world projects.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="bg-gray-700 hover:bg-gray-600 hover:scale-105 transition-all duration-300 p-3 px-6 rounded-lg text-base sm:text-lg font-semibold shadow-lg">Resume</button>
-                    <button class="bg-blue-600 hover:bg-blue-500 hover:scale-105 transition-all duration-300 p-3 px-6 rounded-lg text-base sm:text-lg font-semibold shadow-lg">Hire me</button>
+                    <button id="resumeBtn" class="bg-gray-700 hover:bg-gray-600 hover:scale-105 transition-all duration-300 p-3 px-6 rounded-lg text-base sm:text-lg font-semibold shadow-lg">Resume</button>
+                    <button id="hireMeBtn" class="bg-blue-600 hover:bg-blue-500 hover:scale-105 transition-all duration-300 p-3 px-6 rounded-lg text-base sm:text-lg font-semibold shadow-lg">Hire me</button>
                 </div>
             </div>
         </div>
@@ -77,43 +76,50 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project Card 1 -->
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                    <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-700"></div>
+                    <div class="h-56 bg-gradient-to-r from-blue-500 to-blue-700"><img src="./Assets/images/workergo.png" alt=""></div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 font-heading">WorkerGo</h3>
-                        <p class="text-gray-300 mb-4">Brief description of your project and the technologies used.</p>
+                        <p class="text-gray-300 mb-4">Working on WorkerGo(Project) is a scalable microservices-based service booking platform that enables customers to discover, book, and manage skilled workers such as electricians, plumbers, and technicians. The system supports role-based access for customers, workers, and administrators, with features including worker verification, job scheduling, secure payments, reviews, and job history tracking.</p>
                         <div class="flex gap-2 mb-4">
                             <span class="bg-blue-600 px-3 py-1 rounded-full text-sm">Java</span>
                             <span class="bg-blue-600 px-3 py-1 rounded-full text-sm">Springboot</span>
+                            <span class="bg-blue-600 px-3 py-1 rounded-full text-sm">JPA</span>
+                            <span class="bg-blue-600 px-3 py-1 rounded-full text-sm">Microservices</span>
                         </div>
-                        <button class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-lg transition-colors duration-300">View Project</button>
+                        <button class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-lg transition-colors duration-300"><a href="https://github.com/hafeez957/WorkerGo">View Project</a></button>
                     </div>
                 </div>
 
                 <!-- Project Card 2 -->
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                    <div class="h-48 bg-gradient-to-r from-green-500 to-green-700"></div>
+                    <div class="h-56 bg-gradient-to-r from-green-500 to-green-700"><img src="./Assets/images/event.jpeg" alt=""></div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 font-heading">Event Ticket Booking System</h3>
-                        <p class="text-gray-300 mb-4">Brief description of your project and the technologies used.</p>
+                        <p class="text-gray-300 mb-4">Developed a full-stack web application using Java (JSP, Servlets), JDBC, MySQL, HTML, CSS,
+JavaScript. Implemented Admin module (event creation, transaction management) and
+Participant module (event browsing, registration with payment).</p>
                         <div class="flex gap-2 mb-4">
                             <span class="bg-green-600 px-3 py-1 rounded-full text-sm">Java</span>
                             <span class="bg-green-600 px-3 py-1 rounded-full text-sm">JSP</span>
+                            <span class="bg-green-600 px-3 py-1 rounded-full text-sm">Serverlet</span>
+                            <span class="bg-green-600 px-3 py-1 rounded-full text-sm">MySQL</span>
                         </div>
-                        <button class="bg-green-600 hover:bg-green-500 px-4 py-2 rounded-lg transition-colors duration-300">View Project</button>
+                        <!-- <button class="bg-green-600 hover:bg-green-500 px-4 py-2 rounded-lg transition-colors duration-300">View Project</button> -->
                     </div>
                 </div>
 
                 <!-- Project Card 3 -->
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                    <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-700"></div>
+                    <div class="h-56 bg-gradient-to-r from-purple-500 to-purple-700"><img src="./Assets/images/slayit.png" alt=""></div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 font-heading">SlayIt</h3>
-                        <p class="text-gray-300 mb-4">Brief description of your project and the technologies used.</p>
+                        <p class="text-gray-300 mb-4">Slayit is a responsive e-commerce website that allows users to browse products by category, view product details, add items to a cart, and authenticate users. It is built using HTML, CSS, and JavaScript with a clean and modular structure.</p>
                         <div class="flex gap-2 mb-4">
+                            <span class="bg-purple-600 px-3 py-1 rounded-full text-sm">HTML</span>
                             <span class="bg-purple-600 px-3 py-1 rounded-full text-sm">JavaScript</span>
                             <span class="bg-purple-600 px-3 py-1 rounded-full text-sm">Bootstrap</span>
                         </div>
-                        <button class="bg-purple-600 hover:bg-purple-500 px-4 py-2 rounded-lg transition-colors duration-300">View Project</button>
+                        <button class="bg-purple-600 hover:bg-purple-500 px-4 py-2 rounded-lg transition-colors duration-300">  <a href="https://github.com/hafeez957/Slayit">View Project</a></button>
                     </div>
                 </div>
             </div>
@@ -249,7 +255,7 @@
                         <i class="fa-solid fa-envelope text-blue-400 text-2xl mt-1"></i>
                         <div>
                             <h3 class="text-xl font-bold mb-2">Email</h3>
-                            <p class="text-gray-300">your.email@example.com</p>
+                            <p class="text-gray-300">syedhafeez957@gmail.com</p>
                         </div>
                     </div>
                     <!-- <div class="flex items-start gap-4">

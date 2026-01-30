@@ -6,19 +6,17 @@
   --font-heading: "Poppins", sans-serif;
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 1.5s ease-out;
-}
+/* Removed animation classes and keyframes */
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Background Video Styles */
+#bgVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .nav-element{

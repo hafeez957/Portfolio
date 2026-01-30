@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire Me - Hafeez Ulla</title>
+    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .form-container {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 2px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .form-input {
+            background-color: rgba(15, 23, 42, 0.8);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            border-color: #00D4FF;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+            background-color: rgba(15, 23, 42, 0.95);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #0099ff 0%, #00d4ff 100%);
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+        }
+
+        .tech-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.05;
+            border: 2px solid #00D4FF;
+        }
+
+        .shape1 {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            animation: float 10s ease-in-out infinite;
+        }
+
+        .shape2 {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+            animation: float 12s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(30px, 30px);
+            }
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #00D4FF;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-gray-950 to-gray-900 text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="flex justify-between bg-gray-800 text-white p-4 sm:fixed top-0 w-full z-20 border-b border-gray-700">
+        <div id="logo">
+            <h1 class="text-lg font-bold">HAFEEZ ULLA</h1>
+        </div>
+        <div id="nav-links" class="hidden md:flex lg:pr-15">
+            <ul class="flex font-nav sm:gap-7 lg:gap-16">
+                <li class="nav-element"><a href="./index.html" class="nav-link">Home</a></li>
+                <li class="nav-element"><a href="./index.html#education" class="nav-link">Qualification</a></li>
+                <li class="nav-element"><a href="./index.html#skills" class="nav-link">Skills</a></li>
+                <li class="nav-element"><a href="./index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-element"><a href="./index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+        <div id="nav" onclick="hide()" class="md:hidden">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="min-h-screen pt-20 px-4 py-12">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 font-heading">Let's Build Something Great</h1>
+                <p class="text-lg text-gray-300">Submit your hiring details and job opportunity information. I'll review your offer and get back to you promptly!</p>
+            </div>
+
+            <!-- Recruiter Hiring Form -->
+            <form class="form-container p-8 rounded-lg shadow-2xl space-y-6" id="hireForm">
+                <!-- Company Information -->
+                <fieldset class="border border-gray-600 rounded-lg p-6 space-y-6">
+                    <legend class="text-xl font-bold text-blue-400 px-2">Company Information</legend>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold mb-3">Company Name <span class="text-red-500">*</span></label>
+                        <input type="text" name="companyName" placeholder="Your Company Name" required class="form-input w-full border-2 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none transition-colors">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-3">Company Website</label>
+                        <input type="url" name="companyWebsite" placeholder="https://www.company.com" class="form-input w-full border-2 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none transition-colors">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-3">Industry</label>
+                        <input type="text" name="industry" placeholder="e.g., FinTech, E-commerce, Healthcare" class="form-input w-full border-2 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none transition-colors">
+                    </div>
+                </fieldset>
+
+                <!-- Recruiter Details -->
+                <fieldset class="border border-gray-600 rounded-lg p-6 space-y-6">
+                    <legend class="text-xl font-bold text-blue-400 px-2">Your Details</legend>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold mb-3">Your Full Name <span class="text-red-500">*</span></label>
+                        <input type="text" name="recruiterName" placeholder="Recruiter/HR Manager Name" required class="form-input w-full border-2 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none transition-colors">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-3">Your Email <span class="text-red-500">*</span></label>
+                        <input type="email" name="recruiterEmail" placeholder="your.email@company.com" required class="form-input w-full border-2 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none transition-colors">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-3">Contact Number</label>
+                        <input type="tel" name="contactNumber" placeholder="+1 (555) 123-4567" class="form-input w-full border-2 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none transition-colors">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-3">Your Designation</label>
+                        <input type="text" name="recruiterDesignation" placeholder="e.g., HR Manager, Tech Lead, Hiring Manager" class="form-input w-full border-2 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none transition-colors">
+                    </div>
+                </fieldset>
+
+                <!-- Job Details -->
+                <fieldset class="border border-gray-600 rounded-lg p-6 space-y-6">
+                    <legend class="text-xl font-bold text-green-400 px-2">Job Opportunity Details</legend>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold mb-3">Job Title <span class="text-red-500">*</span></label>
+                        <input type="text" name="jobTitle" placeholder="e.g., Senior Java Developer, Full-Stack Engineer" required class="form-input w-full border-2 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none transition-colors">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-3">Employment Type <span class="text-red-500">*</span></label>
+                        <select name="employmentType" required class="form-input w-full border-2 rounded-lg p-3 text-white focus:outline-none transition-colors">
+                            <option value="">Select employment type</option>
+                            <option value="fulltime">Full-Time</option>
+                            <option value="parttime">Part-Time</option>
+                            <option value="contract">Contract</option>
+                            <option value="freelance">Freelance</option>
+                            <option value="internship">Internship</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-3">Experience Level Required <span class="text-red-500">*</span></label>
+                        <select name="experienceLevel" required class="form-input w-full border-2 rounded-lg p-3 text-white focus:outline-none transition-colors">
+                            <option value="">Select experience level</option>
+                            <option value="entry">Entry Level (0-2 years)</option>
+                            <option value="junior">Junior (2-4 years)</option>
+                            <option value="mid">Mid-Level (4-7 years)</option>
+                            <option value="senior">Senior (7+ years)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-3">Key Skills Required</label>
+                        <textarea name="requiredSkills" placeholder="e.g., Java, Spring Boot, React, MySQL, REST APIs..." rows="4" class="form-input w-full border-2 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none transition-colors resize-none"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-3">Job Description</label>
+                        <textarea name="jobDescription" placeholder="Brief overview of the role, responsibilities, and expectations..." rows="5" class="form-input w-full border-2 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none transition-colors resize-none"></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Compensation & Location -->
+                <fieldset class="border border-gray-600 rounded-lg p-6 space-y-6">
+                    <legend class="text-xl font-bold text-purple-400 px-2">Compensation & Location</legend>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold mb-3">Salary Range <span class="text-red-500">*</span></label>
+                        <input type="text" name="salaryRange" placeholder="e.g., $80,000 - $120,000 per annum" required class="form-input w-full border-2 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none transition-colors">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-3">Work Location</label>
+                        <select name="workLocation" class="form-input w-full border-2 rounded-lg p-3 text-white focus:outline-none transition-colors">
+                            <option value="">Select work location type</option>
+                            <option value="onsite">On-Site</option>
+                            <option value="hybrid">Hybrid</option>
+                            <option value="remote">Remote</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-3">Location/City</label>
+                        <input type="text" name="location" placeholder="e.g., San Francisco, California" class="form-input w-full border-2 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none transition-colors">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-3">Benefits</label>
+                        <textarea name="benefits" placeholder="e.g., Health Insurance, Flexible Hours, Remote Work, Professional Development..." rows="3" class="form-input w-full border-2 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none transition-colors resize-none"></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Timeline -->
+                <fieldset class="border border-gray-600 rounded-lg p-6 space-y-6">
+                    <legend class="text-xl font-bold text-yellow-400 px-2">Timeline & Additional Info</legend>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold mb-3">Joining Timeline <span class="text-red-500">*</span></label>
+                        <select name="joiningTimeline" required class="form-input w-full border-2 rounded-lg p-3 text-white focus:outline-none transition-colors">
+                            <option value="">Select timeline</option>
+                            <option value="immediate">Immediate (ASAP)</option>
+                            <option value="2weeks">2 Weeks</option>
+                            <option value="1month">1 Month</option>
+                            <option value="2months">2 Months</option>
+                            <option value="flexible">Flexible</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-3">Additional Information</label>
+                        <textarea name="additionalInfo" placeholder="Any other details about the position, team, or company culture..." rows="3" class="form-input w-full border-2 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none transition-colors resize-none"></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="flex items-center gap-3">
+                    <input type="checkbox" id="agree" name="agree" required class="w-5 h-5 rounded cursor-pointer">
+                    <label for="agree" class="text-sm text-gray-300">I confirm that all the above information is accurate and this is a genuine job opportunity</label>
+                </div>
+
+                <button type="submit" class="submit-btn w-full py-3 px-6 rounded-lg text-lg font-semibold shadow-lg hover:shadow-2xl">
+                    Send Hiring Details
+                </button>
+
+                <p class="text-center text-gray-400 text-sm">Questions? Reach out to me at <a href="mailto:syedhafeez957@gmail.com" class="text-blue-400 hover:text-blue-300 transition-colors">syedhafeez957@gmail.com</a></p>
+            </form>
+
+            <!-- Back Button -->
+            <div class="text-center mt-8">
+                <a href="./index.html" class="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Portfolio
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full py-8 px-4 bg-gray-950 text-gray-300 border-t border-gray-700 mt-12">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-2 font-heading">HAFEEZ ULLA</h3>
+                    <p class="text-gray-400">Java Full-Stack Developer passionate about building amazing web applications.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="./index.html" class="text-gray-400 hover:text-blue-400 transition-colors">Home</a></li>
+                        <li><a href="./index.html#projects" class="text-gray-400 hover:text-blue-400 transition-colors">Projects</a></li>
+                        <li><a href="./index.html#skills" class="text-gray-400 hover:text-blue-400 transition-colors">Skills</a></li>
+                        <li><a href="./index.html#contact" class="text-gray-400 hover:text-blue-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Follow Me</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 text-xl transition-colors">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300 text-xl transition-colors">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-center text-gray-500">
+                <p>&copy; 2026 Hafeez Ulla. All rights reserved. | Designed with <span class="text-red-500">❤</span> by Hafeez Ulla</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script>
+        // Form submission handler
+        document.getElementById('hireForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Log the hiring details (you can send this to your backend/email service)
+            console.log('Hiring Form submitted:', data);
+            
+            // Store in localStorage for demonstration
+            localStorage.setItem('latestHiringDetails', JSON.stringify(data));
+            
+            // Show success message
+            alert('✓ Thank you for the opportunity! I have received your hiring details and will review them carefully. I will get back to you soon!');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
