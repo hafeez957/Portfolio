@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <script
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
     <style>
         .form-container {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -273,9 +276,11 @@
                     <label for="agree" class="text-sm text-gray-300">I confirm that all the above information is accurate and this is a genuine job opportunity</label>
                 </div>
 
-                <button type="submit" class="submit-btn w-full py-3 px-6 rounded-lg text-lg font-semibold shadow-lg hover:shadow-2xl">
+                <button type="submit" id="hire-submit" class="submit-btn w-full py-3 px-6 rounded-lg text-lg font-semibold shadow-lg hover:shadow-2xl">
                     Send Hiring Details
                 </button>
+
+                <div id="hire-feedback" class="text-sm"></div>
 
                 <p class="text-center text-gray-400 text-sm">Questions? Reach out to me at <a href="mailto:syedhafeez957@gmail.com" class="text-blue-400 hover:text-blue-300 transition-colors">syedhafeez957@gmail.com</a></p>
             </form>
@@ -327,24 +332,78 @@
 
     <script src="./script.js"></script>
     <script>
+        // EmailJS Configuration for Hire Form
+        const HIRE_EMAILJS_SERVICE_ID = 'service_rcvsix5';
+        const HIRE_EMAILJS_TEMPLATE_ID = 'template_d2jp0yb';
+        const HIRE_EMAILJS_PUBLIC_KEY = 'LzjYnWzywI3QCAFNS';
+        
+        let hireEmailjsReady = false;
+        
+        function waitForEmailJSHire() {
+            if (typeof emailjs !== 'undefined' && emailjs.send) {
+                hireEmailjsReady = true;
+                try {
+                    emailjs.init(HIRE_EMAILJS_PUBLIC_KEY);
+                    console.log('EmailJS initialized for hire form');
+                } catch (err) {
+                    console.log('EmailJS already initialized');
+                }
+            } else {
+                setTimeout(waitForEmailJSHire, 100);
+            }
+        }
+        
+        waitForEmailJSHire();
+        
         // Form submission handler
         document.getElementById('hireForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
+            const hireSubmit = document.getElementById('hire-submit');
+            const hireFeedback = document.getElementById('hire-feedback');
+            
+            console.log('Hire form submitted');
+            hireFeedback.textContent = '';
+            hireSubmit.disabled = true;
+            hireSubmit.textContent = 'Sending...';
+            
+            if (!hireEmailjsReady || typeof emailjs === 'undefined') {
+                hireFeedback.className = 'text-yellow-400';
+                hireFeedback.textContent = 'Waiting for EmailJS library... Please wait.';
+                hireSubmit.disabled = false;
+                hireSubmit.textContent = 'Send Hiring Details';
+                setTimeout(() => document.getElementById('hireForm').dispatchEvent(new Event('submit')), 1000);
+                return;
+            }
+            
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
             
-            // Log the hiring details (you can send this to your backend/email service)
-            console.log('Hiring Form submitted:', data);
+            const templateParams = {
+                from_name: data.recruiterName,
+                from_email: data.recruiterEmail,
+                message: `Hiring Opportunity\n\nCompany: ${data.companyName}\nWebsite: ${data.companyWebsite}\nIndustry: ${data.industry}\n\nRecruiter: ${data.recruiterName}\nTitle: ${data.recruiterDesignation}\nPhone: ${data.contactNumber}\n\nJob Title: ${data.jobTitle}\nType: ${data.employmentType}\nLevel: ${data.experienceLevel}\nSalary: ${data.salaryRange}\nLocation: ${data.location}\n\nRequired Skills:\n${data.requiredSkills}\n\nJob Description:\n${data.jobDescription}\n\nBenefits:\n${data.benefits}\n\nJoining Timeline: ${data.joiningTimeline}\n\nAdditional Info:\n${data.additionalInfo}`,
+                to_email: 'syedhafeez957@gmail.com'
+            };
             
-            // Store in localStorage for demonstration
-            localStorage.setItem('latestHiringDetails', JSON.stringify(data));
+            console.log('Sending hire form via EmailJS');
             
-            // Show success message
-            alert('✓ Thank you for the opportunity! I have received your hiring details and will review them carefully. I will get back to you soon!');
-            
-            // Reset form
-            this.reset();
+            emailjs.send(HIRE_EMAILJS_SERVICE_ID, HIRE_EMAILJS_TEMPLATE_ID, templateParams)
+                .then(function(response) {
+                    console.log('Hire form sent successfully!');
+                    hireFeedback.className = 'text-green-400';
+                    hireFeedback.textContent = '✓ Thank you! I have received your hiring details and will review them carefully. I will get back to you soon!';
+                    document.getElementById('hireForm').reset();
+                    hireSubmit.disabled = false;
+                    hireSubmit.textContent = 'Send Hiring Details';
+                })
+                .catch(function(err) {
+                    console.error('EmailJS Error:', err);
+                    hireFeedback.className = 'text-red-400';
+                    hireFeedback.textContent = 'Error sending form. Please try again or email syedhafeez957@gmail.com';
+                    hireSubmit.disabled = false;
+                    hireSubmit.textContent = 'Send Hiring Details';
+                });
         });
     </script>
 </body>
